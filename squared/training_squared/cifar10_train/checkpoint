@@ -1,0 +1,2 @@
+model_checkpoint_path: "//flexo.ads.warwick.ac.uk/Shared41/Microscopy/Jeffrey-Ede/models/modified_losses/cifar10-4/cifar10_train\\model.ckpt-0"
+all_model_checkpoint_paths: "//flexo.ads.warwick.ac.uk/Shared41/Microscopy/Jeffrey-Ede/models/modified_losses/cifar10-4/cifar10_train\\model.ckpt-0"
