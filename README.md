@@ -19,7 +19,7 @@ loss = my_loss_fn( ... ) #Apply neural network and infer loss
 loss = alrc(loss) #Apply ALRC to stabilize learning with default parameters
 ```
 
-ALRC is clipping is robust to hyperparamer choices. The only hyperparameter that needs to be changed is an initial estimate for the first two raw moments of the loss function. If you're usure, run your neural network for 10+ iterations without ALRC to get rough estimates. Any reasonable estimates are fine: even if they are an order of magnitude too high, the ALRC algorithm will decay them to the correct values.
+ALRC is clipping is robust to hyperparamer choices. The only hyperparameter that needs to be changed is an initial estimate for the first two raw moments of the loss function. If you're usure, run your neural network for 10+ iterations without ALRC to get rough estimates. Any reasonable overestimates are fine: even if they are an order of magnitude too high, the ALRC algorithm will decay them to the correct values. Don't underestimate.
 
 ```python
 #Roughly estimate the first two raw moments of the loss function
