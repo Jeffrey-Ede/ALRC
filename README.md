@@ -32,7 +32,7 @@ mu1_start_estimate *= overestimate_factor
 mu2_start_estimate *= overestimate_factor
 
 loss = my_loss_fn( ... ) #Apply neural network and infer loss
-loss = alrc(loss, num_std_dev=num_stddev, mu1_start=mu1_start_estimate, mu2_start=mu2_start_estimate) #Apply ALRC
+loss = alrc(loss, mu1_start=mu1_start_estimate, mu2_start=mu2_start_estimate) #Apply ALRC
 ```
 
 Note that `mu2_start` should be larger than `mu1_start`.
