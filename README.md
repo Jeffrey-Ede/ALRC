@@ -26,7 +26,7 @@ ALRC is clipping is robust to hyperparamer choices. The only hyperparameter that
 mu1_start_estimate = 1.
 mu2_start_estimate = 1.5
 
-#It's fine to overestimate the estimates
+#It's fine to overestimate
 overestimate_factor = 3 
 mu1_start_estimate *= overestimate_factor
 mu2_start_estimate *= overestimate_factor
