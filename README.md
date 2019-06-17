@@ -8,7 +8,7 @@ This repository contains source code for CIFAR-10 supersampling experiments with
 
 ALRC is a simple, computationally inexpensive algorithm that stabilizes learning by limiting the magnitude of backpropagated losses. It can be applied to any neural network trained with stochastic gradient descent. In practice, it improves the training of neural networks where learning is destabilized by high errors and otherwise has little effect.
 
-If you are unsure whether to use ALRC, you should. It is computationally inexpensive, designed to complement other learning algorithms and, at worst, will do nothing. Large improvements in the rate of convergence are seen when learning otherwise has high loss spikes.
+If you are unsure whether to use ALRC, you should. It is computationally inexpensive, designed to complement existing learning algorithms and, at worst, will do nothing. Large improvements in the rate of convergence are seen when learning otherwise has high loss spikes.
 
 # Example
 
