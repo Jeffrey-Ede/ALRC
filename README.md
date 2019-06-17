@@ -19,16 +19,20 @@ loss = my_loss_fn( ... ) #Apply neural network and infer loss
 loss = alrc(loss) #Apply ALRC to stabilize learning with default parameters
 ```
 
-ALRC is clipping is robust to hyperparamer choices. The only hyperparameter that needs to be changed is an initial estimate for a number of standard deviations above loss mean. If you're usure, run your neural network for 10+ iterations without ALRC to get a rough estimate. Any reasonable estimate is fine: even if it is an order of magnitude too high, the ALRC algorithm will decay it to the correct value.
+ALRC is clipping is robust to hyperparamer choices. The only hyperparameter that needs to be changed is an initial estimate for the first two raw moments of the loss function. If you're usure, run your neural network for 10+ iterations without ALRC to get rough estimates. Any reasonable estimates are fine: even if they are an order of magnitude too high, the ALRC algorithm will decay them to the correct values.
 
 ```python
-overestimate_factor = 3 #It's fine to overestimate the initial loss
-loss_start_estimate = 1. #Rough initial loss mean estimate...
-std_dev_estimate =  1 #Rough initial loss standard deviation estimate...
-t = threshold_estimate = overestimate_factor*(loss_start_estimate + num_stddev*std_dev_estimate)
+#Roughly estimate the first two raw moments of the loss function
+mu1_start_estimate = 1.
+mu2_start_estimate =  1.5.
+
+#It's fine to overestimate the initial loss moments
+overestimate_factor = 3 
+mu1_start_estimate *= overestimate_factor
+mu2_start_estimate *= overestimate_factor
 
 loss = my_loss_fn( ... ) #Apply neural network and infer loss
-loss = alrc(loss, num_std_dev=num_stddev, mu1_start=t, mu2_start=t**2+1) #Apply ALRC
+loss = alrc(loss, num_std_dev=num_stddev, mu1_start=mu1_start_estimate, mu2_start=mu2_start_estimate) #Apply ALRC
 ```
 
 Note that `mu2_start` should be larger than `mu1_start`.
