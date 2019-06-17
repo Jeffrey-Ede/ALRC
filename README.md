@@ -24,9 +24,9 @@ ALRC is clipping is robust to hyperparamer choices. The only hyperparameter that
 ```python
 #Roughly estimate the first two raw moments of the loss function
 mu1_start_estimate = 1.
-mu2_start_estimate =  1.5
+mu2_start_estimate = 1.5
 
-#It's fine to overestimate the initial loss moments
+#It's fine to overestimate the estimates
 overestimate_factor = 3 
 mu1_start_estimate *= overestimate_factor
 mu2_start_estimate *= overestimate_factor
