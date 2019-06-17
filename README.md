@@ -1,13 +1,16 @@
-# ALRC
+# Adaptive Learning Rate Clipping (ALRC)
 
 Repository for the [paper](link goes here) "Adatpive Learning Rate Clipping Stabilizes Learning". 
 
-ALRC is a simple, computationally inexpensive algorithm that stabilizes learning by limiting the magnitude of backpropagated losses. It can be applied to any neural network trained with stochastic gradient descent. In practice, it improves the training of neural networks where learning is destabilized by high errors and otherwise has little effect.
-
 This repository contains source code for CIFAR-10 supersampling experiments with squared and countic errors. There is also an implementation of the ALRC algorithm in `alrc.py`. Some source code for partial-STEM experiments is [here](https://github.com/Jeffrey-Ede/partial-STEM).
 
+# Description
+
+ALRC is a simple, computationally inexpensive algorithm that stabilizes learning by limiting the magnitude of backpropagated losses. It can be applied to any neural network trained with stochastic gradient descent. In practice, it improves the training of neural networks where learning is destabilized by high errors and otherwise has little effect.
 
 If you are unsure whether to use ALRC, you should. It is computationally inexpensive and, at worst, will do nothing. Large improvements in the rate of convergence are seen when learning otherwise has high loss spikes.
+
+# Example
 
 ALRC can be applied like any other neural network layer
 
