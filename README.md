@@ -41,4 +41,4 @@ loss = my_loss_fn( ... ) #Apply neural network and infer loss
 loss = alrc(loss, mu1_start=mu1_start_estimate, mu2_start=mu2_start_estimate) #Apply ALRC
 ```
 
-Note that `mu2_start` should be larger than `mu1_start`.
+Note that `mu2_start` should be larger than `mu1_start**2`.
