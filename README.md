@@ -4,6 +4,12 @@ Repository for the [paper](link goes here) "Adatpive Learning Rate Clipping Stab
 
 This repository contains source code for CIFAR-10 supersampling experiments with squared and quartic errors. An implementation of the ALRC algorithm in `alrc.py`. Some source code for partial-STEM is [here](https://github.com/Jeffrey-Ede/partial-STEM).
 
+<p align="center">
+  <img src="adv_vs_non-adv.png">
+</p>
+
+Learning curves show that ALRC and Huberization stabilize learning and accelerate convergence. ALRC lowers final mean squared error (MSE) and Huberized MSE losses. Learning curves are 2500 iteration boxcar averaged.
+
 # Description
 
 ALRC is a simple, computationally inexpensive algorithm that stabilizes learning by limiting loss spikes. It can be applied to any neural network trained with stochastic gradient descent. In practice, it improves the training of neural networks where learning is destabilized by loss spikes and otherwise has little effect.
