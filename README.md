@@ -28,9 +28,9 @@ loss = alrc(loss) #Apply ALRC to stabilize learning with default parameters
 ALRC is robust to hyperparamer choices. The only hyperparameters that need to be changed are initial estimates for the first two raw moments of the loss function. If you're usure, run your neural network for 10+ iterations without ALRC to get rough estimates. Any sensible overestimates are fine: even if they are an order of magnitude too high, the ALRC algorithm will decay them to the correct values. Don't underestimate.
 
 ```python
-#Roughly estimate the first two raw moments of the loss function
-mu1_start_estimate = 1.
-mu2_start_estimate = 1.5
+#Roughly estimate the first two raw moments of a loss function
+mu1_start_estimate = 1. #Replace with your estimate...
+mu2_start_estimate = 1.5 #Replace with your estimate...
 
 #It's fine to overestimate
 overestimate_factor = 3 
