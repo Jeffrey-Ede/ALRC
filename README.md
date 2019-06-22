@@ -35,7 +35,7 @@ mu2_start_estimate = 1.5 #Replace with your estimate...
 #It's fine to overestimate
 overestimate_factor = 3 
 mu1_start_estimate *= overestimate_factor
-mu2_start_estimate *= overestimate_factor
+mu2_start_estimate *= overestimate_factor**2
 
 loss = my_loss_fn( ... ) #Apply neural network and infer loss
 loss = alrc(loss, mu1_start=mu1_start_estimate, mu2_start=mu2_start_estimate) #Apply ALRC
