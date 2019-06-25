@@ -18,17 +18,10 @@ ALRC is computationally inexpensive, designed to complement existing learning al
 
 # Example
 
-ALRC can be applied like any other neural network layer
+ALRC can be applied like any other neural network layer and is robust to hyperparamer choices. The only hyperparameters that should be provided are estimates for the mean and mean squared loss function at the start of training. Any sensible overestimates are fine: even if they are an order of magnitude too high, the ALRC algorithm will decay them to the correct values.
 
 ```python
-loss = my_loss_fn( ... ) #Apply neural network and infer loss
-loss = alrc(loss) #Apply ALRC to stabilize learning with default parameters
-```
-
-ALRC is robust to hyperparamer choices. The only hyperparameters that need to be changed are initial estimates for the first two raw moments of the loss function. Any sensible overestimates are fine: even if they are an order of magnitude too high, the ALRC algorithm will decay them to the correct values.
-
-```python
-#Roughly estimate the first two raw moments of a loss function
+#Roughly estimate the first two raw moments of your loss function
 mu1_start_estimate = 1. #Replace with your estimate...
 mu2_start_estimate = 1.5 #Replace with your estimate...
 
