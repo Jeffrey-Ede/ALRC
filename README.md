@@ -14,7 +14,7 @@ Learning curves show that ALRC and Huberization stabilize learning and accelerat
 
 ALRC is a simple, computationally inexpensive algorithm that stabilizes learning by limiting loss spikes. It can be applied to any neural network trained with stochastic gradient descent. In practice, it improves the training of neural networks where learning is destabilized by loss spikes and otherwise has little effect.
 
-If you are unsure whether to use ALRC, you should! It is computationally inexpensive, designed to complement existing learning algorithms and, at worst, will do nothing. Large improvements in the rate of convergence are seen when learning otherwise has high loss spikes.
+ALRC is computationally inexpensive, designed to complement existing learning algorithms and, at worst, will do nothing. Large improvements in the rate of convergence are seen when learning otherwise has high loss spikes.
 
 # Example
 
@@ -25,7 +25,7 @@ loss = my_loss_fn( ... ) #Apply neural network and infer loss
 loss = alrc(loss) #Apply ALRC to stabilize learning with default parameters
 ```
 
-ALRC is robust to hyperparamer choices. The only hyperparameters that need to be changed are initial estimates for the first two raw moments of the loss function. If you're usure, run your neural network for 10+ iterations without ALRC to get rough estimates. Any sensible overestimates are fine: even if they are an order of magnitude too high, the ALRC algorithm will decay them to the correct values. Don't underestimate.
+ALRC is robust to hyperparamer choices. The only hyperparameters that need to be changed are initial estimates for the first two raw moments of the loss function. Any sensible overestimates are fine: even if they are an order of magnitude too high, the ALRC algorithm will decay them to the correct values.
 
 ```python
 #Roughly estimate the first two raw moments of a loss function
