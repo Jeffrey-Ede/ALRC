@@ -22,8 +22,8 @@ ALRC can be applied like any other neural network layer and is robust to hyperpa
 
 ```python
 #Roughly estimate the first two raw moments of your loss function
-mu1_start_estimate = ... #Your estimate...
-mu2_start_estimate = ... #Your estimate...
+mu1_start_estimate = ... #Your estimate
+mu2_start_estimate = ... #Your estimate
 
 #It's fine to overestimate
 overestimate_factor = 3 
