@@ -32,4 +32,6 @@ def alrc(loss, num_stddev=3, decay=0.999, mu1_start=25, mu2_start=30**2):
 
     #Update moments
     with tf.control_dependencies([mu.assign(decay*mu+(1-decay)*loss), mu2.assign(decay*mu2+(1-decay)*loss**2)]):
-        return tf.identity(loss)
+        loss = tf.identity(loss)
+        
+    return loss
