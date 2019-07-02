@@ -44,7 +44,7 @@ def alrc(
     decay=0.999, 
     mu1_start=25, 
     mu2_start=30**2, 
-    in_place_updates=False
+    in_place_updates=True
     ):
     """Adaptive learning rate clipping (ALRC) of outlier losses.
     
@@ -56,7 +56,7 @@ def alrc(
         two raw moments of the loss.
         mu1_start: Initial estimate for the first raw moment of the loss.
         mu2_start: Initial estimate for the second raw moment of the loss.
-        in_place_updates: If True, add control dependencies for moment tracking
+        in_place_updates: If False, add control dependencies for moment tracking
         to tf.GraphKeys.UPDATE_OPS. This allows the control dependencies to be
         executed in parallel with other dependencies later.
 
