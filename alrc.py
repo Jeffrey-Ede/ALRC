@@ -7,6 +7,9 @@ be applied to losses with arbitrary shapes.
 Implementation is `alrc_loss = alrc(loss)`. Optionally, alrc hyperparameters 
 can be adjusted. Notably, performance may be improved at the start of training
 if the first raw moments of the momentum are on the scale of the losses.
+
+Author: Jeffrey M. Ede
+Email: j.m.ede@warwick.ac.uk
 """
 
 import tensorflow as tf
@@ -84,7 +87,7 @@ def alrc(
             return loss
     else:
         #Control dependencies that can be executed in parallel with other update
-        #ops. Often, these are depencies are added to train ops e.g. alongside
+        #ops. Often, these depencies are added to train ops e.g. alongside
         #batch normalization update ops.
         for update_op in update_ops:
             tf.add_to_collection(tf.GraphKeys.UPDATE_OPS, update_op)
