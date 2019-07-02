@@ -52,7 +52,7 @@ def alrc(
         loss: Loss function to limit outlier losses of.
         num_stddev: Number of standard deviation above loss mean to limit it
         to.
-        decay: Decay rate for exponential moving averages used to tract first
+        decay: Decay rate for exponential moving averages used to track the first
         two raw moments of the loss.
         mu1_start: Initial estimate for the first raw moment of the loss.
         mu2_start: Initial estimate for the second raw moment of the loss.
