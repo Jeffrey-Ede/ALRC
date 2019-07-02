@@ -4,7 +4,7 @@ Implementation of adaptive learning rate clipping (ALRC).
 ALRC is applied to each loss in a batch individually. It can 
 be applied to losses with arbitrary shapes.
 
-Implementation is `clippled_loss = alrc(loss)`. Optionally, alrc hyperparameters 
+Implementation is `alrc_loss = alrc(loss)`. Optionally, alrc hyperparameters 
 can be adjusted. Notably, performance may be improved at the start of training
 if the first raw moments of the momentum are on the scale of the losses.
 """
@@ -15,7 +15,7 @@ def auto_name(name):
     """Append number to variable name to make it unique.
     
     Inputs:
-        name: Start of variable name.
+        name: Initial variable name.
 
     Returns:
         Full variable name with number afterwards to make it unique.
@@ -83,7 +83,9 @@ def alrc(
             loss = tf.identity(loss)
             return loss
     else:
+        #Control dependencies that can be executed in parallel with other update
+        #ops. Often, these are depencies are added to train ops e.g. alongside
+        #batch normalization update ops.
         for update_op in update_ops:
-            #Execute control dependency in parallel with other update ops
             tf.add_to_collection(tf.GraphKeys.UPDATE_OPS, update_op)
         return loss
