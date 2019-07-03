@@ -72,7 +72,7 @@ def alrc(
         auto_name("mu2"), 
         initializer=tf.constant(mu2_start, dtype=tf.float32))
 
-    #Use capped loss for moment updates to limit the effect of extreme losses on the threshold
+    #Use capped loss for moment updates to limit the effect of outlier losses on the threshold
     sigma = tf.sqrt(mu2 - mu**2+1.e-8)
     loss = tf.where(loss < mu+num_stddev*sigma, 
                    loss, 
@@ -87,7 +87,7 @@ def alrc(
             return loss
     else:
         #Control dependencies that can be executed in parallel with other update
-        #ops. Often, these depencies are added to train ops e.g. alongside
+        #ops. Often, these dependencies are added to train ops e.g. alongside
         #batch normalization update ops.
         for update_op in update_ops:
             tf.add_to_collection(tf.GraphKeys.UPDATE_OPS, update_op)
