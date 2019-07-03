@@ -1,8 +1,8 @@
 # Adaptive Learning Rate Clipping (ALRC)
 
-Repository for the [paper](https://arxiv.org/abs/1906.09060) "Adatpive Learning Rate Clipping Stabilizes Learning". LaTeX is [here](https://www.overleaf.com/articles/adaptive-learning-rate-clipping-stabilizes-learning/tssrqcwknfch).
+Repository for the [paper](https://arxiv.org/abs/1906.09060) "Adatpive Learning Rate Clipping Stabilizes Learning". 
 
-This repository contains source code for CIFAR-10 supersampling experiments with squared and quartic errors. An implementation of the ALRC algorithm is in `alrc.py`. Some source code for partial-STEM is [here](https://github.com/Jeffrey-Ede/partial-STEM).
+This repository contains source code for CIFAR-10 supersampling experiments with squared and quartic errors. An implementation of the ALRC algorithm is in `alrc.py`. Some source code for partial-STEM is [here](https://github.com/Jeffrey-Ede/partial-STEM). LaTeX is [here](https://www.overleaf.com/articles/adaptive-learning-rate-clipping-stabilizes-learning/tssrqcwknfch).
 
 <p align="center">
   <img src="alrc_stability.png">
@@ -13,8 +13,6 @@ Learning curves show that ALRC and Huberization stabilize learning and accelerat
 # Description
 
 ALRC is a simple, computationally inexpensive algorithm that stabilizes learning by limiting loss spikes. It can be applied to any neural network trained with stochastic gradient descent. In practice, it improves the training of neural networks where learning is destabilized by loss spikes and otherwise has little effect.
-
-ALRC is computationally inexpensive, designed to complement existing learning algorithms and, at worst, will do nothing. Large improvements in the rate of convergence are seen when learning otherwise has high loss spikes.
 
 # Example
 
