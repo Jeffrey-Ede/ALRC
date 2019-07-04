@@ -10,6 +10,9 @@ if the first raw moments of the momentum are on the scale of the losses.
 
 Author: Jeffrey M. Ede
 Email: j.m.ede@warwick.ac.uk
+
+The original inmplementation was for positive, batch size 1 losses. I'm expanding 
+to cover other use cases; however, I have not covered everything.
 """
 
 import tensorflow as tf
@@ -79,8 +82,9 @@ def alrc(
                    loss/tf.stop_gradient(loss/(mu+num_stddev*sigma)))
 
     #Update moment moving averages
-    update_ops = [mu.assign(decay*mu+(1-decay)*loss), 
-                  mu2.assign(decay*mu2+(1-decay)*loss**2)]
+    mean_loss = tf.reduce_mean(loss)
+    update_ops = [mu.assign(decay*mu+(1-decay)*mean_loss), 
+                  mu2.assign(decay*mu2+(1-decay)*mean_loss**2)]
     if in_place_updates:
         with tf.control_dependencies(update_ops):
             loss = tf.identity(loss)
