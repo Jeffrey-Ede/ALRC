@@ -83,8 +83,9 @@ def alrc(
 
     #Update moment moving averages
     mean_loss = tf.reduce_mean(loss)
+    mean_loss2 = tf.reduce_mean(loss**2)
     update_ops = [mu.assign(decay*mu+(1-decay)*mean_loss), 
-                  mu2.assign(decay*mu2+(1-decay)*mean_loss**2)]
+                  mu2.assign(decay*mu2+(1-decay)*mean_loss2)]
     if in_place_updates:
         with tf.control_dependencies(update_ops):
             loss = tf.identity(loss)
