@@ -89,11 +89,11 @@ def alrc(
     if in_place_updates:
         with tf.control_dependencies(update_ops):
             loss = tf.identity(loss)
-            return loss
     else:
         #Control dependencies that can be executed in parallel with other update
         #ops. Often, these dependencies are added to train ops e.g. alongside
         #batch normalization update ops.
         for update_op in update_ops:
             tf.add_to_collection(tf.GraphKeys.UPDATE_OPS, update_op)
-        return loss
+        
+    return loss
