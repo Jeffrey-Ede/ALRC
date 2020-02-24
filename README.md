@@ -2,7 +2,7 @@
 
 Repository for the [preprint](https://arxiv.org/abs/1906.09060)|paper "Adatpive Learning Rate Clipping Stabilizes Learning". 
 
-This repository contains source code for CIFAR-10 supersampling experiments with squared and quartic errors. An implementation of the ALRC algorithm is in `alrc.py`. Some source code for partial-STEM is [here](https://github.com/Jeffrey-Ede/partial-STEM). LaTeX is [here](https://www.overleaf.com/articles/adaptive-learning-rate-clipping-stabilizes-learning/tssrqcwknfch).
+This repository contains source code for CIFAR-10 supersampling experiments with squared and quartic errors. An implementation of the ALRC algorithm is in `alrc.py`. Some source code for partial-STEM is [here](https://github.com/Jeffrey-Ede/partial-STEM).
 
 <p align="center">
   <img src="alrc_stability.png">
