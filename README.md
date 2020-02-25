@@ -2,17 +2,18 @@
 
 Repository for the [preprint](https://arxiv.org/abs/1906.09060)|paper "Adatpive Learning Rate Clipping Stabilizes Learning". 
 
-This repository contains source code for CIFAR-10 supersampling experiments with squared and quartic errors. An implementation of the ALRC algorithm is in `alrc.py`. Some source code for partial-STEM is [here](https://github.com/Jeffrey-Ede/partial-STEM).
+This repository contains source code for CIFAR-10 supersampling experiments with squared and quartic errors. An implementation of the ALRC algorithm is in `alrc.py`. Source code for partial-STEM is [here](https://github.com/Jeffrey-Ede/partial-STEM).
 
 <p align="center">
-  <img src="alrc_stability.png">
+  <img src="unstable_learning_rate.png">
 </p>
 
-Learning curves show that ALRC and Huberization stabilize learning and accelerate convergence. ALRC lowers final mean squared error (MSE) and Huberized MSE losses. Learning curves are 2500 iteration boxcar averaged.
+Example learning curves showing that ALRC stabilizes learning by preventing loss spikes at unstably high learning rates, and otherwise has little effect. Learning curves are 500 iteration boxcar averaged. Results hold for low and high-order loss functions, different batch sizes and different optimizers. 
+
 
 # Description
 
-ALRC is a simple, computationally inexpensive algorithm that stabilizes learning by limiting loss spikes. It can be applied to any neural network trained with stochastic gradient descent. In practice, it improves the training of neural networks where learning is destabilized by loss spikes and otherwise has little effect.
+ALRC is a simple, computationally inexpensive algorithm that stabilizes learning by limiting loss spikes. It can be applied to any neural network trained with gradient descent. In practice, it improves the training of neural networks where learning is destabilized by loss spikes and otherwise has little effect.
 
 # Example
 
@@ -33,3 +34,9 @@ loss = alrc(loss, mu1_start=mu1_start_estimate, mu2_start=mu2_start_estimate) #A
 ```
 
 Note that `mu2_start` should be larger than `mu1_start**2`.
+
+# When Should I Use ALRC?
+
+If learning is destabilized by high loss spikes. This is common for training with small batch sizes, unstably high learning rates or high order loss functions. It might also help if your dataset contains unusual or mislabelled examples that cause loss spikes.
+
+ALRC can also be used to safeguard against potential loss spikes. Anecdoteally, this was the situation in our [partial STEM](https://arxiv.org/abs/1905.13667) experiments. Large loss spikes would sometimes occur partway through training, which made results difficult to compare. ALRC prevented loss spikes, making training more consistent so that different experiments could be compared.
