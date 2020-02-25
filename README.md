@@ -1,5 +1,7 @@
 # Adaptive Learning Rate Clipping (ALRC)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3686987.svg)](https://doi.org/10.5281/zenodo.3686987)
+
 Repository for the [preprint](https://arxiv.org/abs/1906.09060)|paper "Adatpive Learning Rate Clipping Stabilizes Learning". 
 
 This repository contains source code for CIFAR-10 supersampling experiments with squared and quartic errors. An implementation of the ALRC algorithm is in `alrc.py`. Source code for partial-STEM is [here](https://github.com/Jeffrey-Ede/partial-STEM).
