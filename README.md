@@ -39,7 +39,7 @@ Note that `mu2_start` should be larger than `mu1_start**2`.
 
 # When Should I Use ALRC?
 
-If learning is destabilized by high loss spikes. This is common for training with small batch sizes, unstably high learning rates or high order loss functions. It might also help if your dataset contains unusual or mislabelled examples that cause loss spikes.
+If learning is destabilized by loss spikes. This is common for training at small batch sizes, unstably high learning rates or high order loss functions. It might also help if your dataset contains unusual or mislabelled examples that cause loss spikes.
 
 ALRC can also be used to safeguard against potential loss spikes. Anecdoteally, this was the situation in our [partial STEM](https://arxiv.org/abs/1905.13667) experiments. Large loss spikes would sometimes occur partway through training, which made results difficult to compare. ALRC prevented loss spikes, making training more consistent so that different experiments could be compared.
 
