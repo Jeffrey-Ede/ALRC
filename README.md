@@ -10,7 +10,7 @@ This repository contains source code for CIFAR-10 supersampling experiments with
   <img src="unstable_learning_rate.png">
 </p>
 
-Example learning curves for stable and unstably high learning rates. ALRC stabilizes learning by preventing loss spikes and otherwise has little effect. Learning curves are 500 iteration boxcar averaged. Results are similar for low and high-order loss functions, different batch sizes and different optimizers. 
+Example learning curves for stable and unstably high learning rates. ALRC stabilizes learning by preventing loss spikes and otherwise has little effect. Learning curves are 500 iteration boxcar averaged. Results are similar for low and high order loss functions, different batch sizes and different optimizers. 
 
 
 # Description
