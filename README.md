@@ -45,5 +45,5 @@ ALRC can also be used to safeguard against potential loss spikes. Anecdoteally, 
 
 # Contact
 
-Jeffrey Ede: j.m.ede@warwick.ac.uk
+Jeffrey Ede: j.m.ede@warwick.ac.uk  
 Richard Beanland: r.beanland@warwick.ac.uk
