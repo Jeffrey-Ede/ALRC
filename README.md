@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3686987.svg)](https://doi.org/10.5281/zenodo.3686987)
 
-Repository for the [preprint](https://arxiv.org/abs/1906.09060)|paper "Adatpive Learning Rate Clipping Stabilizes Learning". 
+Repository for the [preprint](https://arxiv.org/abs/1906.09060)|[paper](https://doi.org/10.1088/2632-2153/ab81e2) "Adatpive Learning Rate Clipping Stabilizes Learning". 
 
 This repository contains source code for CIFAR-10 supersampling experiments with squared and quartic errors, and stable and unstably high learning rates. An implementation of the ALRC algorithm is in `alrc.py`. Source code for partial-STEM is [here](https://github.com/Jeffrey-Ede/partial-STEM).
 
