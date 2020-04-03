@@ -45,7 +45,7 @@ ALRC can also be used to safeguard against potential loss spikes. Anecdoteally, 
 
 # Training data
 
-Our training dataset containing crops 161069 from STEM images is available [here](https://github.com/Jeffrey-Ede/datasets/wiki).
+Our training dataset containing 161069 crops from STEM images is available [here](https://github.com/Jeffrey-Ede/datasets/wiki).
 
 # Contact
 
