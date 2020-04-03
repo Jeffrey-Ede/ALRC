@@ -43,6 +43,10 @@ If learning is destabilized by loss spikes. This is common for training at small
 
 ALRC can also be used to safeguard against potential loss spikes. Anecdoteally, this was the situation in our [partial STEM](https://arxiv.org/abs/1905.13667) experiments. Large loss spikes would sometimes occur partway through training, which made results difficult to compare. ALRC prevented loss spikes, making training more consistent so that different experiments could be compared.
 
+# Training data
+
+The STEM Crops dataset is available [here](https://github.com/Jeffrey-Ede/datasets/wiki).
+
 # Contact
 
 Jeffrey Ede: j.m.ede@warwick.ac.uk  
