@@ -13,11 +13,11 @@ This repository contains source code for CIFAR-10 supersampling experiments with
 Example learning curves for stable and unstably high learning rates. ALRC stabilizes learning by preventing loss spikes and otherwise has little effect. Learning curves are 500 iteration boxcar averaged. Results are similar for low and high order loss functions, different batch sizes and different optimizers. 
 
 
-# Description
+## Description
 
 ALRC is a simple, computationally inexpensive algorithm that stabilizes learning by limiting loss spikes. It can be applied to any neural network trained with gradient descent. In practice, it improves the training of neural networks where learning is destabilized by loss spikes and otherwise has little effect.
 
-# Example
+## Example
 
 ALRC can be applied like any other neural network layer and is robust to hyperparamer choices. The only hyperparameters that need to be provided are estimates for the mean and mean squared loss function at the start of training. Any sensible overestimates are fine: even if they are an order of magnitude too high, the ALRC algorithm will decay them to the correct values.
 
@@ -37,17 +37,17 @@ loss = alrc(loss, mu1_start=mu1_start_estimate, mu2_start=mu2_start_estimate) #A
 
 Note that `mu2_start` should be larger than `mu1_start**2`.
 
-# When Should I Use ALRC?
+## When Should I Use ALRC?
 
 If learning is destabilized by loss spikes. This is common for training at small batch sizes, unstably high learning rates or high order loss functions. It might also help if your dataset contains unusual or mislabelled examples that cause loss spikes.
 
 ALRC can also be used to safeguard against potential loss spikes. Anecdoteally, this was the situation in our [partial STEM](https://arxiv.org/abs/1905.13667) experiments. Large loss spikes would sometimes occur partway through training, which made results difficult to compare. ALRC prevented loss spikes, making training more consistent so that different experiments could be compared.
 
-# Training data
+## Training data
 
 Our training dataset containing 161069 crops from STEM images is available [here](https://github.com/Jeffrey-Ede/datasets/wiki).
 
-# Contact
+## Contact
 
 Jeffrey Ede: j.m.ede@warwick.ac.uk  
 Richard Beanland: r.beanland@warwick.ac.uk
